@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\account-service",
+    "\\account-service\\src",
+    "\\account-service\\src\\main",
+    "\\account-service\\src\\main\\java",
+    "\\account-service\\src\\main\\java\\com",
+    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse",
+    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account",
+    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity"
+  ],
+  "PreviewInSolutionExplorer": false
+}
