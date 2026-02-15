@@ -2,12 +2,16 @@ package com.digitalmoneyhouse.users.service;
 
 import com.digitalmoneyhouse.users.dto.RegisterRequest;
 import com.digitalmoneyhouse.users.dto.RegisterResponse;
+import com.digitalmoneyhouse.users.dto.UserProfileResponse;
 import com.digitalmoneyhouse.users.entity.Role;
 import com.digitalmoneyhouse.users.entity.User;
 import com.digitalmoneyhouse.users.exception.ValidationException;
 import com.digitalmoneyhouse.users.client.AccountServiceClient;
 import com.digitalmoneyhouse.users.client.dto.AccountResponseDto;
+import com.digitalmoneyhouse.users.client.dto.AccountSummaryDto;
 import com.digitalmoneyhouse.users.client.dto.CreateAccountRequestDto;
+import com.digitalmoneyhouse.users.exception.ForbiddenException;
+import com.digitalmoneyhouse.users.exception.ResourceNotFoundException;
 import com.digitalmoneyhouse.users.repository.RoleRepository;
 import com.digitalmoneyhouse.users.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -61,5 +65,15 @@ public class UserService {
             account.cvu(),
             account.alias()
         );
+    }
+
+    public UserProfileResponse getProfile(Long id, Long authUserId) {
+        if (!authUserId.equals(id)) {
+            throw new ForbiddenException("Sin permisos");
+        }
+        User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
+        AccountSummaryDto account = accountServiceClient.getAccountByUserId(user.getId());
+        return new UserProfileResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(),
+                account.cvu(), account.alias());
     }
 }
