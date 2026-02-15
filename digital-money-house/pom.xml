@@ -24,6 +24,7 @@
         <module>auth-service</module>
         <module>users-service</module>
         <module>account-service</module>
+        <module>smoke-tests</module>
     </modules>
 
     <properties>
