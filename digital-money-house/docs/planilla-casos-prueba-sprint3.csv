@@ -1,0 +1,11 @@
+ID,Funcionalidad,Caso de prueba,Precondiciones,Pasos,Resultado esperado,Automatizado
+S3-01,Actividad,Historial con token,Cuenta existente,GET /accounts/{id}/activity con token,200 lista ordenada,Sí
+S3-02,Actividad,Historial sin token,-,GET /accounts/{id}/activity sin token,401,Sí
+S3-03,Actividad,Historial cuenta ajena,Token usuario A,GET /accounts/{idB}/activity con token A,403,Sí
+S3-04,Detalle transacción,Detalle con token,Transacción existente,GET /accounts/{id}/activity/{transactionId},200 detalle,Sí
+S3-05,Detalle transacción,Detalle sin token,-,GET sin token,401,Sí
+S3-06,Detalle transacción,Transacción inexistente,-,GET activity/999999,404,Sí
+S3-07,Ingreso desde tarjeta,Ingreso válido,Tarjeta asociada,POST /accounts/{id}/transferences cardId amount,201,Sí
+S3-08,Ingreso desde tarjeta,Ingreso sin token,-,POST sin token,401,Sí
+S3-09,Ingreso desde tarjeta,Tarjeta no pertenece a cuenta,Tarjeta otra cuenta,POST con cardId ajeno,404,Sí
+S3-10,Ingreso desde tarjeta,Monto inválido,-,POST amount 0 o negativo,400,Sí

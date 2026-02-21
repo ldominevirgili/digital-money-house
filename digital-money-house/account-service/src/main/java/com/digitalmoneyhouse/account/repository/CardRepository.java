@@ -11,4 +11,8 @@ public interface CardRepository extends JpaRepository<Card, Long> {
     List<Card> findByAccountId(Long accountId);
 
     Optional<Card> findByIdAndAccountId(Long id, Long accountId);
+
+    boolean existsByNumber(String number);
+
+    boolean existsByAccountIdAndNumber(Long accountId, String number);
 }

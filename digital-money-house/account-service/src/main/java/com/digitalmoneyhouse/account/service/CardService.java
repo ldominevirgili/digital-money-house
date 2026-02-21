@@ -25,6 +25,9 @@ public class CardService {
 
     @Transactional
     public CardResponse createCard(CardRequest request) {
+        if (cardRepository.existsByNumber(request.number())) {
+            throw new ConflictException("La tarjeta ya esta registrada");
+        }
         Card card = new Card();
         card.setNumber(request.number());
         card.setType(request.type());
@@ -40,6 +43,9 @@ public class CardService {
         Card card = cardRepository.findById(cardId).orElseThrow(() -> new ResourceNotFoundException("Tarjeta no encontrada"));
         if (card.getAccountId() != null && !card.getAccountId().equals(accountId)) {
             throw new ConflictException("La tarjeta ya esta asociada a otra cuenta");
+        }
+        if (cardRepository.existsByAccountIdAndNumber(accountId, card.getNumber())) {
+            throw new ConflictException("Esta cuenta ya tiene una tarjeta con ese numero");
         }
         card.setAccountId(accountId);
         card = cardRepository.save(card);

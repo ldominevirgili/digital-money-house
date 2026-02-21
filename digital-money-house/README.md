@@ -1,6 +1,6 @@
 # Digital Money House
 
-Backend billetera digital - microservicios. Sprint 1 + 2.
+Backend billetera digital - microservicios. Sprint 1, 2 y 3.
 
 **Stack:** Java 17, Spring Boot 3, MySQL, Eureka, Gateway, Feign, JWT.
 
@@ -32,12 +32,18 @@ Sprint 2 (con token):
 - GET /cards/accounts/{accountId}/cards — listar tarjetas de la cuenta.
 - GET /cards/accounts/{accountId}/cards/{cardId} — detalle tarjeta.
 - DELETE /cards/accounts/{accountId}/cards/{cardId} — eliminar tarjeta.
+- PATCH /users/{id} — actualizar nombre/apellido. PATCH /accounts/{id} — actualizar alias.
+
+Sprint 3 (con token):
+- GET /accounts/{id}/activity — historial de actividad (más reciente primero).
+- GET /accounts/{id}/activity/{transactionId} — detalle de una transacción.
+- POST /accounts/{id}/transferences — ingresar dinero desde tarjeta. Body: { "cardId": 1, "amount": 100.50, "description": "opcional" }.
 
 Swagger en cada servicio: 8081, 8082, 8083 /swagger-ui.html
 
 Ramas: main, dev, test (git checkout -b dev, etc).
 
-**Testing Sprint 2**
-- Planilla de casos: `docs/planilla-casos-prueba-sprint2.md` y `docs/planilla-casos-prueba-sprint2.csv`.
-- Suite ejecutable: `docs/suite-pruebas-sprint2.md`.
-- Smoke automatizado (RestAssured): módulo `smoke-tests`. Con todos los servicios arriba: `mvn -pl smoke-tests test`.
+**Testing**
+- Sprint 2: `docs/planilla-casos-prueba-sprint2.md`, `docs/suite-pruebas-sprint2.md`.
+- Sprint 3: `docs/planilla-casos-prueba-sprint3.md`, `docs/test-exploratorio-sprint3.md`.
+- Smoke (RestAssured): `mvn -pl smoke-tests test` con servicios levantados.
