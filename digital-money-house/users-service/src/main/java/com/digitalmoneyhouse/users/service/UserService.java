@@ -3,6 +3,7 @@ package com.digitalmoneyhouse.users.service;
 import com.digitalmoneyhouse.users.dto.RegisterRequest;
 import com.digitalmoneyhouse.users.dto.RegisterResponse;
 import com.digitalmoneyhouse.users.dto.UserProfileResponse;
+import com.digitalmoneyhouse.users.dto.UserUpdateRequest;
 import com.digitalmoneyhouse.users.entity.Role;
 import com.digitalmoneyhouse.users.entity.User;
 import com.digitalmoneyhouse.users.exception.ValidationException;
@@ -72,6 +73,24 @@ public class UserService {
             throw new ForbiddenException("Sin permisos");
         }
         User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
+        AccountSummaryDto account = accountServiceClient.getAccountByUserId(user.getId());
+        return new UserProfileResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(),
+                account.cvu(), account.alias());
+    }
+
+    @Transactional
+    public UserProfileResponse updateUser(Long id, Long authUserId, UserUpdateRequest request) {
+        if (!authUserId.equals(id)) {
+            throw new ForbiddenException("Sin permisos");
+        }
+        User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
+        if (request.firstName() != null && !request.firstName().isBlank()) {
+            user.setFirstName(request.firstName().trim());
+        }
+        if (request.lastName() != null && !request.lastName().isBlank()) {
+            user.setLastName(request.lastName().trim());
+        }
+        user = userRepository.save(user);
         AccountSummaryDto account = accountServiceClient.getAccountByUserId(user.getId());
         return new UserProfileResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(),
                 account.cvu(), account.alias());

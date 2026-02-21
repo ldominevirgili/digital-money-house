@@ -1,11 +1,13 @@
 package com.digitalmoneyhouse.account.controller;
 
 import com.digitalmoneyhouse.account.dto.AccountResponse;
+import com.digitalmoneyhouse.account.dto.AccountSummaryResponse;
+import com.digitalmoneyhouse.account.dto.AccountUpdateRequest;
 import com.digitalmoneyhouse.account.dto.AssociateCardRequest;
 import com.digitalmoneyhouse.account.dto.BalanceResponse;
 import com.digitalmoneyhouse.account.dto.CardResponse;
 import com.digitalmoneyhouse.account.dto.CreateAccountRequest;
-import com.digitalmoneyhouse.account.dto.AccountSummaryResponse;
+import com.digitalmoneyhouse.account.dto.DepositRequest;
 import com.digitalmoneyhouse.account.dto.TransactionResponse;
 import com.digitalmoneyhouse.account.exception.ForbiddenException;
 import com.digitalmoneyhouse.account.service.CardService;
@@ -54,6 +56,27 @@ public class AccountController {
         return ResponseEntity.ok(accountService.getTransactions(id, userId));
     }
 
+    @Operation(summary = "Actividad / historial de la cuenta")
+    @GetMapping("/{id}/activity")
+    public ResponseEntity<List<TransactionResponse>> getActivity(@PathVariable Long id, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(accountService.getActivity(id, userId));
+    }
+
+    @Operation(summary = "Detalle de una transaccion")
+    @GetMapping("/{id}/activity/{transactionId}")
+    public ResponseEntity<TransactionResponse> getTransactionDetail(@PathVariable Long id, @PathVariable Long transactionId, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(accountService.getTransactionDetail(id, transactionId, userId));
+    }
+
+    @Operation(summary = "Ingresar dinero desde tarjeta")
+    @PostMapping("/{id}/transferences")
+    public ResponseEntity<TransactionResponse> deposit(@PathVariable Long id, @Valid @RequestBody DepositRequest request, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.status(HttpStatus.CREATED).body(accountService.depositFromCard(id, userId, request));
+    }
+
     @Operation(summary = "Asociar tarjeta a cuenta")
     @PostMapping("/{id}/cards")
     public ResponseEntity<CardResponse> associateCard(@PathVariable Long id, @Valid @RequestBody AssociateCardRequest request, Authentication auth) {
@@ -69,5 +92,12 @@ public class AccountController {
             throw new ForbiddenException("Sin permisos");
         }
         return ResponseEntity.ok(accountService.getSummaryByUserId(userId));
+    }
+
+    @Operation(summary = "Actualizar alias de la cuenta")
+    @PatchMapping("/{id}")
+    public ResponseEntity<AccountSummaryResponse> updateAccount(@PathVariable Long id, @Valid @RequestBody AccountUpdateRequest request, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(accountService.updateAlias(id, userId, request));
     }
 }

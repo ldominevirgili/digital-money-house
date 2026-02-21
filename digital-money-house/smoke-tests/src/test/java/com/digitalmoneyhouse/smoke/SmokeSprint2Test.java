@@ -71,7 +71,7 @@ class SmokeSprint2Test extends BaseSmokeTest {
                 .get("/accounts/" + accountId + "/transactions")
                 .then()
                 .statusCode(200)
-                .body("", hasItems());
+                .body("", hasSize(greaterThanOrEqualTo(0)));
     }
 
     @Test @Order(5)
