@@ -25,14 +25,33 @@ public class CardService {
 
     @Transactional
     public CardResponse createCard(CardRequest request) {
-        if (cardRepository.existsByNumber(request.number())) {
+        String number = request.number() != null ? request.number().trim() : null;
+        if (number == null || number.isEmpty()) {
+            throw new ConflictException("Numero de tarjeta invalido");
+        }
+        if (cardRepository.existsByNumber(number)) {
             throw new ConflictException("La tarjeta ya esta registrada");
         }
         Card card = new Card();
-        card.setNumber(request.number());
+        card.setNumber(number);
         card.setType(request.type());
         card.setHolderName(request.holderName());
         card.setExpiry(request.expiry() != null ? request.expiry() : "");
+        card = cardRepository.save(card);
+        return toResponse(card);
+    }
+
+    @Transactional
+    public CardResponse updateCard(Long accountId, Long cardId, Long userId, com.digitalmoneyhouse.account.dto.CardUpdateRequest request) {
+        accountService.getAccountByIdAndUser(accountId, userId);
+        Card card = cardRepository.findByIdAndAccountId(cardId, accountId)
+                .orElseThrow(() -> new ResourceNotFoundException("Tarjeta no encontrada"));
+        if (request.holderName() != null) {
+            card.setHolderName(request.holderName());
+        }
+        if (request.expiry() != null) {
+            card.setExpiry(request.expiry());
+        }
         card = cardRepository.save(card);
         return toResponse(card);
     }

@@ -8,7 +8,9 @@
     "\\account-service\\src\\main\\java\\com",
     "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse",
     "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account",
-    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity"
+    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config",
+    "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller"
   ],
+  "SelectedNode": "\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java",
   "PreviewInSolutionExplorer": false
 }

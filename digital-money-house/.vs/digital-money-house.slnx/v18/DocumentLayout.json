@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JwtFilter.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java*",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtFilter.java*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T15:20:56.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SecurityConfig.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\SecurityConfig.java",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T15:20:54.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JwtProperties.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\config\\JwtProperties.java",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T15:20:52.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\controller\\AccountController.java",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T15:20:29.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Transaction.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Transaction.java",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T15:00:28.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Card.java",
+              "DocumentMoniker": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java",
+              "RelativeDocumentMoniker": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java",
+              "ToolTip": "C:\\Users\\Romina Lafitte\\Documents\\Lautaro\\Repositorios\\digital-money-house\\account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java",
+              "RelativeToolTip": "account-service\\src\\main\\java\\com\\digitalmoneyhouse\\account\\entity\\Card.java",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001630|",
+              "WhenOpened": "2026-02-21T14:34:57.199Z",
+              "EditorCaption": ""
             }
           ]
         }

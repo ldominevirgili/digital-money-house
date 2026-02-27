@@ -77,6 +77,34 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.CREATED).body(accountService.depositFromCard(id, userId, request));
     }
 
+    @Operation(summary = "Ultimos destinatarios de transferencias")
+    @GetMapping("/{id}/transferences")
+    @io.swagger.v3.oas.annotations.responses.ApiResponses(value = {
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "OK"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "401", description = "Unauthorized"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "403", description = "Forbidden")
+    })
+    public ResponseEntity<java.util.List<com.digitalmoneyhouse.account.dto.TransferRecipientResponse>> getTransferences(@PathVariable Long id, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(accountService.getTransferences(id, userId));
+    }
+
+    @Operation(summary = "Realizar transferencia a CVU/Alias")
+    @io.swagger.v3.oas.annotations.responses.ApiResponses(value = {
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "OK"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad Request"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "401", description = "Unauthorized"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "403", description = "Forbidden"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404", description = "Not Found"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "410", description = "Insufficient Funds"),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "500", description = "Internal Server Error")
+    })
+    @PostMapping("/{id}/transferences/transfer")
+    public ResponseEntity<TransactionResponse> transfer(@PathVariable Long id, @Valid @RequestBody com.digitalmoneyhouse.account.dto.TransferRequest request, Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(accountService.transfer(id, userId, request));
+    }
+
     @Operation(summary = "Asociar tarjeta a cuenta")
     @PostMapping("/{id}/cards")
     public ResponseEntity<CardResponse> associateCard(@PathVariable Long id, @Valid @RequestBody AssociateCardRequest request, Authentication auth) {
