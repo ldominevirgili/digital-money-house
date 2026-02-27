@@ -16,6 +16,9 @@ public class Transaction {
     @Column(name = "account_id", nullable = false)
     private Long accountId;
 
+    @Column(name = "counterparty_account_id")
+    private Long counterpartyAccountId;
+
     @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal amount;
 
@@ -34,6 +37,8 @@ public class Transaction {
     public void setId(Long id) { this.id = id; }
     public Long getAccountId() { return accountId; }
     public void setAccountId(Long accountId) { this.accountId = accountId; }
+    public Long getCounterpartyAccountId() { return counterpartyAccountId; }
+    public void setCounterpartyAccountId(Long counterpartyAccountId) { this.counterpartyAccountId = counterpartyAccountId; }
     public BigDecimal getAmount() { return amount; }
     public void setAmount(BigDecimal amount) { this.amount = amount; }
     public String getType() { return type; }

@@ -31,6 +31,15 @@ public class CardsController {
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
+    @Operation(summary = "Actualizar tarjeta (holderName/expiry)")
+    @PatchMapping("/accounts/{accountId}/cards/{cardId}")
+    public ResponseEntity<CardResponse> update(@PathVariable Long accountId, @PathVariable Long cardId,
+                                               @Valid @RequestBody com.digitalmoneyhouse.account.dto.CardUpdateRequest request,
+                                               Authentication auth) {
+        Long userId = (Long) auth.getPrincipal();
+        return ResponseEntity.ok(cardService.updateCard(accountId, cardId, userId, request));
+    }
+
     @Operation(summary = "Listar tarjetas de la cuenta")
     @GetMapping("/accounts/{accountId}/cards")
     public ResponseEntity<List<CardResponse>> listByAccount(@PathVariable Long accountId, Authentication auth) {

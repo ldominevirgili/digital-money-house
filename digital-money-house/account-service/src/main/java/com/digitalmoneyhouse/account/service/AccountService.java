@@ -29,4 +29,8 @@ public interface AccountService {
     TransactionResponse getTransactionDetail(Long accountId, Long transactionId, Long userId);
 
     TransactionResponse depositFromCard(Long accountId, Long userId, DepositRequest request);
+
+    java.util.List<com.digitalmoneyhouse.account.dto.TransferRecipientResponse> getTransferences(Long accountId, Long userId);
+
+    TransactionResponse transfer(Long accountId, Long userId, com.digitalmoneyhouse.account.dto.TransferRequest request);
 }
