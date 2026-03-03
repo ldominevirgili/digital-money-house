@@ -1,0 +1,7 @@
+ID,Funcionalidad,Caso de prueba,Precondiciones,Pasos,Resultado esperado,Automatizado
+TF-01,Transferencias,Transferencia exitosa,Cuenta con saldo suficiente,POST /accounts/{id}/transferences/transfer body: {"target","amount","description"},200 OK, Sí
+TF-02,Transferencias,Fondos insuficientes,Cuenta con saldo insuficiente,POST /accounts/{id}/transferences/transfer body: {"target","amount"},410 Fondos insuficientes, Sí
+TF-03,Transferencias,Destinatario inexistente,-,POST /accounts/{id}/transferences/transfer con target inválido,404 Not Found, No
+TF-04,Transferencias,Validación de request,amount < 0.01 o target vacío,POST con payload inválido,400 Bad Request, No
+TF-05,Transferencias,Transferir a la misma cuenta,target = misma cuenta,POST ... con target igual a la cuenta origen,400 Bad Request, No
+TF-06,Transferencias,Listado últimos destinatarios,Cuenta con transferencias previas,GET /accounts/{id}/transferences,200 OK, No
